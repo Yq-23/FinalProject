@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name" translatable="false">Hello</string>
+    <string name="Title" translatable="false">股票系统</string>
+    <string name="TitleResult" translatable="false">查询结果</string>
+    <string name="btn_search" translatable="false">查询股票</string>
+    <string name="btn_add" translatable="false">增加股票</string>
+    <string name="btn_delete" translatable="false">删除股票</string>
+    <string name="btn_return" translatable="false">返回</string>
+    <string name="TitleImage" translatable="false">image</string>
+    <string name="btn_returnP" translatable="false">返回上一界面</string>
+    <string name="TitleAdd" translatable="false">添加股票</string>
+    <string name="TextName" translatable="false">请输入股票名字：</string>
+    <string name="TextCode" translatable="false">请输入股票代码：</string>
+    <string name="btn_submit" translatable="false">提交</string>
+    <string name="TitleDelete" translatable="false">删除股票</string>
+    <string name="hint" translatable="false">请输入内容</string>
+</resources>

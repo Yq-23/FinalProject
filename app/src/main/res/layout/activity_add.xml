@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddActivity">
+
+    <TextView
+        android:id="@+id/TitleAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="80dp"
+        android:gravity="center"
+        android:text="@string/TitleAdd"
+        android:textSize="35sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp">
+
+        <TextView
+            android:id="@+id/textCode"
+            android:layout_width="210dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginStart="16dp"
+            android:text="@string/TextCode"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/EditCode"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/hint"
+            android:inputType="textPersonName"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="100dp"
+        android:background="@android:color/holo_green_light"
+        android:gravity="center"
+        android:onClick="Add"
+        android:text="@string/btn_submit"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/btn_return2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="100dp"
+        android:background="@android:color/holo_green_light"
+        android:gravity="center"
+        android:onClick="Add"
+        android:text="@string/btn_return"
+        android:textSize="25sp" />
+
+
+</LinearLayout>
