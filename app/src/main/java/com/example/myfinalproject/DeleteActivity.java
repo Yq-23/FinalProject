@@ -9,18 +9,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myfinalproject.Adapter.MyAdapter;
 import com.example.myfinalproject.DB.StockItem;
 import com.example.myfinalproject.DB.StockManager;
-import com.example.myfinalproject.Util.GetURL;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -63,6 +59,7 @@ public class DeleteActivity extends AppCompatActivity implements Runnable,Adapte
                     Toast.makeText(DeleteActivity.this, "无股票信息，请添加！", Toast.LENGTH_SHORT).show();
                     Intent return_add = new Intent(DeleteActivity.this,AddActivity.class);
                     startActivityForResult(return_add,3);
+                    finish();
                 }
                 super.handleMessage(msg);
 
@@ -74,6 +71,7 @@ public class DeleteActivity extends AppCompatActivity implements Runnable,Adapte
         if(btn.getId() == R.id.btn_return3){
             Intent return_main = new Intent(DeleteActivity.this,MainActivity.class);
             startActivityForResult(return_main,1);
+            finish();
         }else if(btn.getId() == R.id.btn_deleteAll){
             stocklist = stockManager.listAll();
             if(stocklist.size() == 0){

@@ -54,6 +54,7 @@ public class ResultActivity extends AppCompatActivity implements Runnable, Adapt
                     Toast.makeText(ResultActivity.this, "无股票信息，请添加！", Toast.LENGTH_SHORT).show();
                     Intent return_add = new Intent(ResultActivity.this,AddActivity.class);
                     startActivityForResult(return_add,3);
+                    finish();
                 }
                 super.handleMessage(msg);
 
@@ -64,6 +65,7 @@ public class ResultActivity extends AppCompatActivity implements Runnable, Adapt
     public void ret(View V){
         Intent return_main = new Intent(ResultActivity.this,MainActivity.class);
         startActivityForResult(return_main,1);
+        finish();
     }
 
     @Override
@@ -97,7 +99,6 @@ public class ResultActivity extends AppCompatActivity implements Runnable, Adapt
                             stockManager.updatePrice(si);
                             Log.i(TAG,c + ": 价格已发生变化，已更新。。。。。。");
                         }
-
                     }
                 }
 

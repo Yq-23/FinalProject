@@ -9,11 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myfinalproject.Adapter.MyAdapter;
 import com.example.myfinalproject.DB.StockItem;
 import com.example.myfinalproject.DB.StockManager;
 import com.example.myfinalproject.Util.GetURL;
@@ -74,9 +71,11 @@ public class AddActivity extends AppCompatActivity implements Runnable{
         }else if(btn.getId() == R.id.btn_returnResult){
             Intent return_result = new Intent(AddActivity.this,ResultActivity.class);
             startActivityForResult(return_result,2);
+            finish();
         }else if(btn.getId() == R.id.btn_return2){
             Intent return_main = new Intent(AddActivity.this,MainActivity.class);
             startActivityForResult(return_main,1);
+            finish();
         }
     }
 

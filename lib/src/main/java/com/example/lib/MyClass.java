@@ -14,10 +14,18 @@ public class MyClass {
 
     public static void main(String[] args){
 
-        String str = "sh601006";
-        List<String> stockList = new ArrayList<String>();
-        stockList.add(null);
-        System.out.println(stockList);
+        List<String> list = new ArrayList<String>();
+        String s = "http://hq.sinajs.cn/list=s_sh000001,s_sz399001,s_sz399006";
+        String a = SendGET(s);
+        String[] d = a.split(";");
+        for (int i = 0; i < d.length; i++) {
+            // 获取当前点数
+            String c1 = d[i].split(",")[1];
+            System.out.println(c1);
+            list.add(c1);
+        }
+        System.out.println(list.get(0));
+
 
         /*String s = "http://hq.sinajs.cn/list=" + str;
         String a = SendGET(s);

@@ -113,6 +113,7 @@ public class ImageActivity extends AppCompatActivity implements Runnable{
     public void re(View V){
         Intent return_result = new Intent(ImageActivity.this,ResultActivity.class);
         startActivityForResult(return_result,2);
+        finish();
     }
 
 

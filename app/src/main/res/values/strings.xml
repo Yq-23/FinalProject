@@ -19,4 +19,7 @@
     <string name="btn_deleteAll">delete all</string>
     <string name="btn_result">show result</string>
     <string name="menu_exit">exit</string>
+    <string name="txtSH">上证指数</string>
+    <string name="txtSZ">深证成指</string>
+    <string name="txtCY">创业板指</string>
 </resources>

@@ -14,43 +14,131 @@
         android:text="@string/Title"
         android:gravity="center"
         android:textSize="45sp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textSH"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center|bottom"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/txtSH"
+                android:textColor="@android:color/black"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/SHpoint"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="26sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textSZ"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center|bottom"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:text="@string/txtSZ"
+                android:textColor="@android:color/black"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/SZpoint"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="26sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textCY"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center|bottom"
+                android:text="@string/txtCY"
+                android:textColor="@android:color/black"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/CYpoint"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="26sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="80dp"
         android:gravity="center"
         android:onClick="OnClick"
         android:text="@string/btn_search"
-        android:textSize="28sp" />
+        android:textSize="28sp"
+        android:background="@drawable/button_circle_shape_orange"/>
 
     <Button
         android:id="@+id/btn_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="80dp"
         android:gravity="center"
         android:onClick="OnClick"
         android:text="@string/btn_add"
-        android:textSize="28sp" />
+        android:textSize="28sp"
+        android:background="@drawable/button_circle_shape_orange"/>
 
     <Button
         android:id="@+id/btn_delete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="80dp"
         android:gravity="center"
         android:onClick="OnClick"
         android:text="@string/btn_delete"
-        android:textSize="28sp" />
+        android:textSize="28sp"
+        android:background="@drawable/button_circle_shape_orange" />
 
 
 </LinearLayout>

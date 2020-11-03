@@ -78,7 +78,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="24dp"
-        android:background="@android:color/holo_blue_light"
+        android:background="@drawable/button_circle_shape_blue"
         android:gravity="center"
         android:onClick="ret"
         android:text="@string/btn_return"
