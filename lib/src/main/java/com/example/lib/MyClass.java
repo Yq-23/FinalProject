@@ -15,9 +15,11 @@ public class MyClass {
     public static void main(String[] args){
 
         String str = "sh601006";
+        List<String> stockList = new ArrayList<String>();
+        stockList.add(null);
+        System.out.println(stockList);
 
-        //System.out.println("Hello");
-        String s = "http://hq.sinajs.cn/list=" + str;
+        /*String s = "http://hq.sinajs.cn/list=" + str;
         String a = SendGET(s);
         String[] d = a.split(";");
         Pattern p = Pattern.compile("\"(.*?)\"");
@@ -43,7 +45,7 @@ public class MyClass {
                 String c2 = d1[3];
                 System.out.println("Price:" + c2);
             }
-        }
+        }*/
     }
 
         public static String SendGET(String url) {

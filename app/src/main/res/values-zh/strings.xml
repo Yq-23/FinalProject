@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stock</string>
+    <string name="Title">股票系统</string>
+    <string name="TitleResult">查询结果</string>
+    <string name="btn_search">查询股票</string>
+    <string name="btn_add">增加股票</string>
+    <string name="btn_delete">删除股票</string>
+    <string name="btn_return">返回</string>
+    <string name="btn_returnP">返回上一界面</string>
+    <string name="TitleAdd">添加股票</string>
+    <string name="TextCode">请输入股票代码：</string>
+    <string name="btn_submit">提交</string>
+    <string name="TitleDelete">删除股票</string>
+    <string name="hint">请输入内容</string>
+    <string name="StockName">股票名字</string>
+    <string name="StockPrice">实时价格</string>
+    <string name="btn_deleteAll">删除所有数据</string>
+    <string name="btn_result">展示股票</string>
+    <string name="menu_exit">退出</string>
+</resources>

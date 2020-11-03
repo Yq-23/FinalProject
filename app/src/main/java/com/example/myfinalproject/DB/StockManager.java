@@ -46,19 +46,31 @@ public class StockManager {
         db.close();
     }
 
-    public void delete(int id){
+    public void deleteId(int id){
         SQLiteDatabase db = dbhelper.getWritableDatabase();
         db.delete(tbname, "ID=?", new String[]{String.valueOf(id)});
         db.close();
     }
 
-    public void update(StockItem item){
+    public void deleteCode(String stockcode){
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+        db.delete(tbname, "STOCKCODE=?", new String[]{stockcode});
+        db.close();
+    }
+
+    public void deleteName(String stockname){
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+        db.delete(tbname, "STOCKNAME=?", new String[]{stockname});
+        db.close();
+    }
+
+    public void updatePrice(StockItem item){
         SQLiteDatabase db = dbhelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("stockname",item.getStockname());
         values.put("stockcode",item.getStockcode());
         values.put("stockprice",item.getStockprice());
-        db.update(tbname, values, "ID=?", new String[]{String.valueOf(item.getId())});
+        db.update(tbname, values, "STOCKCODE=?", new String[]{String.valueOf(item.getStockcode())});
         db.close();
     }
 
@@ -66,10 +78,11 @@ public class StockManager {
         List<StockItem> stockList = null;
         SQLiteDatabase db = dbhelper.getReadableDatabase();
         Cursor cursor = db.query(tbname, null, null, null, null, null, null);
+        StockItem item;
         if(cursor!=null){
             stockList = new ArrayList<StockItem>();
             while(cursor.moveToNext()){
-                StockItem item = new StockItem();
+                item = new StockItem();
                 item.setId(cursor.getInt(cursor.getColumnIndex("ID")));
                 item.setStockname(cursor.getString(cursor.getColumnIndex("STOCKNAME")));
                 item.setStockcode(cursor.getString(cursor.getColumnIndex("STOCKCODE")));
@@ -82,11 +95,28 @@ public class StockManager {
         return stockList;
     }
 
-    public StockItem findById(int id){
+    public StockItem findByCode(String stockcode){
         SQLiteDatabase db = dbhelper.getWritableDatabase();
-        Cursor cursor = db.query(tbname, null, "ID=?", new String[]{String.valueOf(id)},
-                null, null,null);
+        Cursor cursor = db.query(tbname, null, "STOCKCODE=?", new String[]{stockcode},null, null,null);
+        StockItem item = null;
+        if(cursor!=null && cursor.moveToFirst()){
+            item = new StockItem();
+            item.setId(cursor.getInt(cursor.getColumnIndex("ID")));
+            item.setStockname(cursor.getString(cursor.getColumnIndex("STOCKNAME")));
+            item.setStockcode(cursor.getString(cursor.getColumnIndex("STOCKCODE")));
+            item.setStockprice(cursor.getString(cursor.getColumnIndex("STOCKPRICE")));
+            cursor.close();
+        }else{
+            item = new StockItem();
+            item.setStockcode("0");
+        }
+        db.close();
+        return item;
+    }
 
+    public StockItem findByName(String stockname){
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+        Cursor cursor = db.query(tbname, null, "STOCKNAME=?", new String[]{stockname},null, null,null);
         StockItem item = null;
         if(cursor!=null && cursor.moveToFirst()){
             item = new StockItem();
@@ -100,9 +130,10 @@ public class StockManager {
         return item;
     }
 
-    public StockItem findByCode(String stockcode){
+    public StockItem findById(int id){
         SQLiteDatabase db = dbhelper.getWritableDatabase();
-        Cursor cursor = db.query(tbname, null, "STOCKCODE=?", new String[]{stockcode},null, null,null);
+        Cursor cursor = db.query(tbname, null, "ID=?", new String[]{String.valueOf(id)},
+                null, null,null);
 
         StockItem item = null;
         if(cursor!=null && cursor.moveToFirst()){

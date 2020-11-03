@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.example.myfinalproject.DB.StockManager;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -26,8 +28,7 @@ public class ImageActivity extends AppCompatActivity implements Runnable{
     TextView txtImage;
     Handler handler;
     String uri;
-    String s;
-    String s1;
+    String s, sn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +42,11 @@ public class ImageActivity extends AppCompatActivity implements Runnable{
         Bundle bdl_image = intent.getExtras();
         String stockname = bdl_image.getString("StockName","");
         float stockprice = bdl_image.getFloat("StockPrice",0.1f);
-        s1 = stockname;
+        sn = stockname;
 
-        Log.i(TAG,"StockName = " + stockname);
-        Log.i(TAG,"stockprice = " + stockprice);
+        Log.i(TAG,"StockName = " + stockname + "  StockPrice = " + stockprice);
 
-                txtImage = (TextView) findViewById(R.id.TitleImage);
+        txtImage = (TextView) findViewById(R.id.TitleImage);
         txtImage.setText(stockname + "——日K线图");
 
         Thread t = new Thread(this);
@@ -67,13 +67,9 @@ public class ImageActivity extends AppCompatActivity implements Runnable{
     @Override
     public void run() {
         Log.i(TAG,"run:run()......");
-        if(s1.equals("大秦铁路")){
-            s = "sh601006";
-        }else if(s1.equals("大同煤业")){
-            s = "sh601001";
-        }else{
-            s = "sz300601";
-        }
+        StockManager stockManager = new  StockManager(ImageActivity.this);
+        s = stockManager.findByName(sn).stockcode;
+        Log.i(TAG,sn + " 的日K线图");
         uri = "https://image.sinajs.cn/newchart/daily/n/"+ s +".gif";
         Bitmap bitmap = getBitmap(uri);
         if (bitmap != null) {
@@ -115,7 +111,7 @@ public class ImageActivity extends AppCompatActivity implements Runnable{
     }
 
     public void re(View V){
-        Intent return_result = new Intent(this,ResultActivity.class);
+        Intent return_result = new Intent(ImageActivity.this,ResultActivity.class);
         startActivityForResult(return_result,2);
     }
 

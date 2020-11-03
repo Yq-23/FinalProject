@@ -1,17 +1,22 @@
 <resources>
-    <string name="app_name" translatable="false">Hello</string>
-    <string name="Title" translatable="false">股票系统</string>
-    <string name="TitleResult" translatable="false">查询结果</string>
-    <string name="btn_search" translatable="false">查询股票</string>
-    <string name="btn_add" translatable="false">增加股票</string>
-    <string name="btn_delete" translatable="false">删除股票</string>
-    <string name="btn_return" translatable="false">返回</string>
+    <string name="app_name">Stock</string>
+    <string name="Title">Stock System</string>
+    <string name="TitleResult">Result</string>
+    <string name="btn_search">Stock inquiry</string>
+    <string name="btn_add">Add Stock</string>
+    <string name="btn_delete">Delete Stock</string>
+    <string name="btn_return">return</string>
     <string name="TitleImage" translatable="false">image</string>
-    <string name="btn_returnP" translatable="false">返回上一界面</string>
-    <string name="TitleAdd" translatable="false">添加股票</string>
-    <string name="TextName" translatable="false">请输入股票名字：</string>
-    <string name="TextCode" translatable="false">请输入股票代码：</string>
-    <string name="btn_submit" translatable="false">提交</string>
-    <string name="TitleDelete" translatable="false">删除股票</string>
-    <string name="hint" translatable="false">请输入内容</string>
+    <string name="btn_returnP">return previous</string>
+    <string name="TitleAdd">Add Stock</string>
+    <string name="TextCode">Please input the stock code:</string>
+    <string name="btn_submit">submit</string>
+    <string name="TitleDelete">Delete Stock</string>
+    <string name="hint">input elements</string>
+    <string name="nodata" translatable="false">No Data</string>
+    <string name="StockName">StockName</string>
+    <string name="StockPrice">StockPrice</string>
+    <string name="btn_deleteAll">delete all</string>
+    <string name="btn_result">show result</string>
+    <string name="menu_exit">exit</string>
 </resources>

@@ -12,19 +12,76 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
         android:gravity="center"
         android:text="@string/TitleDelete"
         android:textSize="35sp" />
 
-    <ListView
-        android:id="@+id/listDelete"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="450dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="30dp"
-        android:textSize="12sp" />
+        android:layout_height="400dp"
+        android:layout_marginBottom="24dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textTitle1"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:text="@string/StockName"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textPrice1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:layout_marginEnd="36dp"
+                android:text="@string/StockPrice"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/listDelete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="36dp"
+            android:textSize="12sp">
+
+        </ListView>
+
+        <TextView
+            android:id="@+id/nodata1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/nodata"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_deleteAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/holo_green_light"
+        android:gravity="center"
+        android:onClick="Delete"
+        android:text="@string/btn_deleteAll"
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/btn_return3"
@@ -32,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="40dp"
         android:background="@android:color/holo_green_light"
         android:gravity="center"
         android:onClick="Delete"
