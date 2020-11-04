@@ -1,9 +1,11 @@
 package com.example.myfinalproject;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.myfinalproject.Util.GetURL;
 
 import java.util.ArrayList;
@@ -23,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements Runnable{
     TextView SHpoint, SZpoint, CYpoint;
     Handler handler;
     String s;
+    AlertDialog.Builder builder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,8 +105,16 @@ public class MainActivity extends AppCompatActivity implements Runnable{
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {//处理菜单事件，设置菜单项中每一个item的功能
         if(item.getItemId()==R.id.menu_exit){
             //设置功能，与设置按钮的事件一样
-            android.os.Process.killProcess(android.os.Process.myPid());
-            System.exit(0);
+            builder = new AlertDialog.Builder(this);
+            builder.setTitle("提示")
+                    .setMessage("确定要退出程序吗？")
+                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            android.os.Process.killProcess(android.os.Process.myPid());
+                            System.exit(0);
+                        }
+                    }).setNegativeButton("取消", null);
+            builder.create().show();
         }
 
         return super.onOptionsItemSelected(item);
