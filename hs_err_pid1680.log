@@ -1,0 +1,166 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=1680, tid=0x0000000000002cd8
+#
+# JRE version:  (8.0_242-b01) (build )
+# Java VM: OpenJDK 64-Bit Server VM (25.242-b01 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000031e2800):  JavaThread "Unknown thread" [_thread_in_vm, id=11480, stack(0x0000000002d30000,0x0000000002e30000)]
+
+Stack: [0x0000000002d30000,0x0000000002e30000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00000000031e2800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=11480, stack(0x0000000002d30000,0x0000000002e30000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x0000000081a00000, size: 2022 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 38400K, used 665K [0x00000000d5e00000, 0x00000000d8880000, 0x0000000100000000)
+  eden space 33280K, 2% used [0x00000000d5e00000,0x00000000d5ea6670,0x00000000d7e80000)
+  from space 5120K, 0% used [0x00000000d8380000,0x00000000d8380000,0x00000000d8880000)
+  to   space 5120K, 0% used [0x00000000d7e80000,0x00000000d7e80000,0x00000000d8380000)
+ ParOldGen       total 87552K, used 0K [0x0000000081a00000, 0x0000000086f80000, 0x00000000d5e00000)
+  object space 87552K, 0% used [0x0000000081a00000,0x0000000081a00000,0x0000000086f80000)
+ Metaspace       used 779K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 74K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x00000000126a0000,0x0000000012aa0000] byte_map_base: 0x0000000012293000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000550bf030
+ Begin Bits: [0x0000000013150000, 0x00000000150e8000)
+ End Bits:   [0x00000000150e8000, 0x0000000017080000)
+
+Polling page: 0x0000000001040000
+
+CodeCache: size=245760Kb used=328Kb max_used=328Kb free=245431Kb
+ bounds [0x00000000032e0000, 0x0000000003550000, 0x00000000122e0000]
+ total_blobs=57 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.052 loading class java/lang/Short
+Event: 0.053 loading class java/lang/Short done
+Event: 0.053 loading class java/lang/Integer
+Event: 0.053 loading class java/lang/Integer done
+Event: 0.053 loading class java/lang/Long
+Event: 0.053 loading class java/lang/Long done
+Event: 0.055 loading class java/lang/NullPointerException
+Event: 0.055 loading class java/lang/NullPointerException done
+Event: 0.055 loading class java/lang/ArithmeticException
+Event: 0.055 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff754860000 - 0x00007ff754891000 	D:\AndroidStudio\studio\jre\jre\bin\java.exe
+0x00007ff9d00e0000 - 0x00007ff9d02d0000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff9cf2f0000 - 0x00007ff9cf3a2000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff9cd120000 - 0x00007ff9cd3c5000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff9cfff0000 - 0x00007ff9d0093000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff9ce610000 - 0x00007ff9ce6ae000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff9ce560000 - 0x00007ff9ce5f7000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff9cf1d0000 - 0x00007ff9cf2f0000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff9cf410000 - 0x00007ff9cf5a4000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff9cd070000 - 0x00007ff9cd091000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff9cf1a0000 - 0x00007ff9cf1c6000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff9cd3d0000 - 0x00007ff9cd566000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff9cd970000 - 0x00007ff9cda0e000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff9cd6a0000 - 0x00007ff9cd79a000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff9c44f0000 - 0x00007ff9c4774000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.1139_none_9e7bf2d3e4605ac6\COMCTL32.dll
+0x00007ff9ce190000 - 0x00007ff9ce4c5000 	C:\WINDOWS\System32\combase.dll
+0x00007ff9cd570000 - 0x00007ff9cd5f0000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff9cf660000 - 0x00007ff9cf68e000 	C:\WINDOWS\System32\IMM32.DLL
+0x0000000053820000 - 0x00000000538f2000 	D:\AndroidStudio\studio\jre\jre\bin\msvcr100.dll
+0x00000000548f0000 - 0x000000005513b000 	D:\AndroidStudio\studio\jre\jre\bin\server\jvm.dll
+0x00007ff9ce600000 - 0x00007ff9ce608000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff9c87f0000 - 0x00007ff9c87fa000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff9c0a00000 - 0x00007ff9c0a24000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff9c8930000 - 0x00007ff9c8939000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff9cfd70000 - 0x00007ff9cfddf000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff9c07b0000 - 0x00007ff9c07dd000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ff9cd920000 - 0x00007ff9cd96a000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x00007ff9c8470000 - 0x00007ff9c847f000 	D:\AndroidStudio\studio\jre\jre\bin\verify.dll
+0x00007ff9c7410000 - 0x00007ff9c7439000 	D:\AndroidStudio\studio\jre\jre\bin\java.dll
+0x00007ff9c7da0000 - 0x00007ff9c7db6000 	D:\AndroidStudio\studio\jre\jre\bin\zip.dll
+
+VM Arguments:
+java_command: org.jetbrains.git4idea.http.GitAskPassApp Username for 'https://github.com': 
+java_class_path (initial): D:/AndroidStudio/studio/plugins/git4idea/lib/git4idea-rt.jar;D:/AndroidStudio/studio/lib/xmlrpc-2.0.1.jar;D:/AndroidStudio/studio/lib/commons-codec-1.13.jar;D:/AndroidStudio/studio/lib/util.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=E:\JavaJDK\jdk
+CLASSPATH=.;E:\JavaJDK\jdk\lib\dt.jar;E:\JavaJDK\jdk\lib\tools.jar
+PATH=E:\GIT\Git\mingw64\libexec\git-core;E:\GIT\Git\mingw64\libexec\git-core;E:\GIT\Git\mingw64\bin;E:\GIT\Git\usr\bin;C:\Users\Lenovo\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Anaconda2;C:\ProgramData\Anaconda2\Library\mingw-w64\bin;C:\ProgramData\Anaconda2\Library\usr\bin;C:\ProgramData\Anaconda2\Library\bin;C:\ProgramData\Anaconda2\Scripts;D:\Oracle\product\11.2.0\dbhome_1\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\WINDOWS\System32\OpenSSH;E:\JavaJDK\jdk\bin;E:\JavaJDK\jdk\jre\bin;C:\Program Files\Microsoft VS Code\bin;E:\Matlab\R2016b\runtime\win64;E:\Matlab\R2016b\bin;E:\Matlab\R2016b\polyspace\bin;D:\Matlab 2016b\R2016b\runtime\win64;D:\Matlab 2016b\R2016b\bin;D:\Matlab 2016b\R2016b\polyspace\bin;E:\JavaJDK\jdk\jre\bi;D:\AndroidStudio\sdk;D:\AndroidStudio\sdk\platform-tools;.;D:\AndroidStudio\sdk\platform-tools;E:\GIT\Git\cmd;C:\Users\Lenovo\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Graphviz2.38\bin
+USERNAME=Lenovo
+DISPLAY=:0.0
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 18362 (10.0.18362.1110)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 142 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8278912k(172692k free), swap 20861824k(7632k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.242-b01) for windows-amd64 JRE (1.8.0_242-release-1644-b01), built by "builder" with MS VC++ 10.0 (VS2010)
+
+time: Wed Nov 04 18:57:02 2020
+timezone: 中国标准时间
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
