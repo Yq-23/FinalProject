@@ -30,9 +30,11 @@ public class MyAdapter extends ArrayAdapter {
         Map<String, String> map = (Map<String, String>) getItem(position);
         TextView name = (TextView)itemView.findViewById(R.id.StockName);
         TextView price = (TextView)itemView.findViewById(R.id.StockPrice);
+        TextView code = (TextView)itemView.findViewById(R.id.StockCode);
 
         name.setText(map.get("StockName"));
         price.setText(map.get("StockPrice"));
+        code.setText(map.get("StockCode"));
 
         return itemView;
     }

@@ -50,7 +50,7 @@ public class DeleteActivity extends AppCompatActivity implements Runnable,Adapte
                 if (msg.what == 7) {
                     listItems = (ArrayList<HashMap<String, String>>) msg.obj;
                     listItemAdapter = new SimpleAdapter(DeleteActivity.this, listItems,  R.layout.list_item,
-                            new String[] { "StockName", "StockPrice" },new int[] { R.id.StockName, R.id.StockPrice } );
+                            new String[] { "StockName", "StockPrice", "StockCode" },new int[] { R.id.StockName, R.id.StockPrice, R.id.StockCode} );
                     listdelete.setAdapter(listItemAdapter);
                     listdelete.setOnItemLongClickListener(DeleteActivity.this);//添加长按事件监听
                 }else if(msg.what == 8){
@@ -103,6 +103,7 @@ public class DeleteActivity extends AppCompatActivity implements Runnable,Adapte
                     HashMap<String, String> map = new HashMap<String, String>();
                     map.put("StockName", stockItem.getStockname());
                     map.put("StockPrice", stockItem.getStockprice());
+                    map.put("StockCode",stockItem.getStockcode());
                     list1.add(map);
                 }
             }

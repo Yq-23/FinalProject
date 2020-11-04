@@ -106,6 +106,7 @@ public class ResultActivity extends AppCompatActivity implements Runnable, Adapt
                    HashMap<String, String> map = new HashMap<String, String>();
                    map.put("StockName", stockItem1.getStockname());
                    map.put("StockPrice", stockItem1.getStockprice());
+                   map.put("StockCode",stockItem1.getStockcode());
                    list1.add(map);
                }
             }
